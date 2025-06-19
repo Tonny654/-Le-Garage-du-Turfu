@@ -9,9 +9,9 @@ const v1 = new Voiture("Toyota", "Yaris", 2015, "rouge");
 const v2 = new Voiture("Fiat", "500", 2020, "rose");
 const v3 = new Voiture("Volvo", "XC40", 2022, "jaune");
 
-console.log(Couleur initiale : ${v3.couleur});
+console.log(`Couleur initiale : ${v3.couleur}`);
 v3.couleur = "vert kaki"; // setter
-console.log(Nouvelle couleur : ${v3.couleur}\n);
+console.log(`Nouvelle couleur : ${v3.couleur}\n`);
 
 v1.afficherDetail();
 v2.afficherDetail();

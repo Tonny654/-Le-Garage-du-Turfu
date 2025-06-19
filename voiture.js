@@ -1,75 +1,23 @@
-/*-- Créer une Class--*/
+// voiture.js
+import { Vehicule } from "./vehicule.js"; // ❌ PAS d’accent
 
-class Voiture {
+export class Voiture extends Vehicule {
+  #couleur;
 
-    #marque;
-    #modele;
+  constructor(marque, modele, annee, couleur) {
+    super(marque, modele, annee); // on passe seulement 3 arguments au parent
+    this.#couleur = couleur;
+  }
 
-    constructor(marque, modele, annee, couleur) {
-        this.#marque = marque;
-        this.#modele = modele;
-        this.annee = annee;
-        this.couleur = couleur;
-    }
-    afficherDetail() {
-    console.log(`Marque: ${this.marque}, Modèle: ${this.modele}, Annee: ${this.annee}`);
-    console.log(`Couleur: ${this.couleur}`);
-    }
+  get couleur() {
+    return this.#couleur;
+  }
+  set couleur(nouvelle) {
+    this.#couleur = nouvelle;
+  }
 
-    changerCouleur(nouvelleCouleur) {
-        this.couleur = nouvelleCouleur;
-        console.log(`La couleur a été changée en ${this.couleur}.`);
-    }
-
-    // --- Getters ---
-    getMarque() {
-        return this.#marque;
-    }
-
-    getModele() {
-        return this.#modele;
-    }
-
-    getAnnee() {
-        return this.annee;
-    }
-
-    getCouleur() {
-        return this.couleur;
-    }
-
-    // --- Setters ---
-    setMarque(nouvelleMarque) {
-        this.#marque = nouvelleMarque;
-    }
-
-    setModele(nouveauModele) {
-        this.#modele = nouveauModele;
-    }
-
-    setAnnee(nouvelleAnnee) {
-        this.annee = nouvelleAnnee;
-    }
-
-    setCouleur(nouvelleCouleur) {
-        this.couleur = nouvelleCouleur;
-    }
+  afficherDetail() {
+    super.afficherInfos(); // marque / modèle / année
+    console.log(Couleur : ${this.#couleur});
+  }
 }
-
-// Créer une instance de la classe Voiture//
-
-const maVoiture = new Voiture("Toyota", "corolla", 2020, "rouge");
-const maVoiture2 = new Voiture("Peugeot", "308", 2020, "rouge");
-const maVoiture3 = new Voiture("Renault", "Modus", 2020, "Gris");
-
-
-// Modification via setters
-maVoiture.setMarque("Honda");
-maVoiture.setModele("Civic");
-maVoiture.setAnnee(2023);
-maVoiture.setCouleur("Rouge");
-
-
-
-
-maVoiture.afficherDetail();
