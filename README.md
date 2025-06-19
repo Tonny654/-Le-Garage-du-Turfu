@@ -62,13 +62,15 @@ Les fichiers JS séparés (vehicule.js, voiture.js, etc.)
 Un fichier principal index.js de démonstration
 Un fichier README.md expliquant la structure, les classes et la logique
 ✅ Critères de performance
-🔹 Niveau Essentiel
-✅ La classe Voiture est correctement définie avec ses 4 attributs
-✅ La méthode afficherDetails() affiche toutes les infos d’un objet
-✅ Le fichier principal (index.js) permet de créer une instance et d’afficher ses détails
+
+🔹 ``Niveau Essentiel``
+
+* ✅ La classe Voiture est correctement définie avec ses 4 attributs
+* ✅ La méthode afficherDetails() affiche toutes les infos d’un objet
+* ✅ Le fichier principal (index.js) permet de créer une instance et d’afficher ses détails
 🔸 Niveau Attendu
-✅ Les attributs sont privés et manipulés via des getters/setters
-✅ La classe Vehicule existe et Voiture hérite correctement d’elle
-✅ Le polymorphisme est correctement mis en œuvre avec Animal, Chien, Chat
-✅ Une collection d’animaux est parcourue et faireDuBruit() est appelé sur chacun
-✅ Code clair, indenté, commenté, bien structuré
+* ✅ Les attributs sont privés et manipulés via des getters/setters
+* ✅ La classe Vehicule existe et Voiture hérite correctement d’elle
+* ✅ Le polymorphisme est correctement mis en œuvre avec Animal, Chien, Chat
+* ✅ Une collection d’animaux est parcourue et faireDuBruit() est appelé sur chacun
+* ✅ Code clair, indenté, commenté, bien structuré
