@@ -1,23 +1,22 @@
-// voiture.js
-import { Vehicule } from "./vehicule.js"; // ❌ PAS d’accent
-
-export class Voiture extends Vehicule {
+export class Voiture {
   #couleur;
 
   constructor(marque, modele, annee, couleur) {
-    super(marque, modele, annee); // on passe seulement 3 arguments au parent
+    this.marque = marque;
+    this.modele = modele;
+    this.annee = annee;
     this.#couleur = couleur;
   }
 
   get couleur() {
     return this.#couleur;
   }
-  set couleur(nouvelle) {
-    this.#couleur = nouvelle;
+
+  set couleur(nouvelleCouleur) {
+    this.#couleur = nouvelleCouleur;
   }
 
   afficherDetail() {
-    super.afficherInfos(); // marque / modèle / année
-    console.log(`Couleur : ${this.#couleur}`);
+    console.log(`Voiture: ${this.marque} ${this.modele} (${this.annee}) - Couleur: ${this.#couleur}`);
   }
 }

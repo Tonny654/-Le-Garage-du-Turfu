@@ -1,7 +1,7 @@
-/* création de la class Chat */
+import { Animal } from "./animal.js";
 
-class Chat {
-    fairedubruit() {
-        console.log("Miaou je suis un chat robot");
-    }
+export class Chat extends Animal {
+  faireDuBruit() {
+    console.log("Le chat miaule : Miaou !");
+  }
 }
