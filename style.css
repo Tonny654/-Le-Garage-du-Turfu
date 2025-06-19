@@ -1,21 +1,44 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f0f4f8;
   margin: 0;
   padding: 0;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .container {
   max-width: 700px;
-  margin: 3rem auto;
+  margin: 4rem auto;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 16px;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.7); /* Forme sombre pour contraste */
+  border-radius: 20px;
+  box-shadow:
+    0 0 15px #00ffcc,
+    0 0 30px #ccff00,
+    0 0 50px #00ffcc;
+  color: #eaffd0;
   position: relative;
-  overflow: hidden;
-  z-index: 1;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: pulseNeon 2s infinite alternate;
 }
+
+@keyframes pulseNeon {
+  from {
+    box-shadow:
+      0 0 10px #00ffcc,
+      0 0 20px #ccff00,
+      0 0 30px #00ffcc;
+  }
+  to {
+    box-shadow:
+      0 0 20px #00ffcc,
+      0 0 40px #ccff00,
+      0 0 60px #00ffcc;
+  }
+}
+
 
 .container::before {
   content: "";
@@ -57,14 +80,28 @@ input, select {
 }
 
 button {
-  background-color: #0077cc;
-  color: white;
+  background-color: #00ff88;
+  color: #000;
+  font-weight: bold;
   border: none;
-  padding: 0.7rem;
-  font-size: 1rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #00ff88;
+  text-shadow: 0 0 3px #ccff00;
+}
+
+button:hover {
+  background-color: #111; /* effet néon sur fond sombre */
+  color: #ccff00;
+  box-shadow:
+    0 0 10px #ccff00,
+    0 0 20px #00ffcc,
+    0 0 30px #ccff00,
+    0 0 40px #00ffcc;
+  text-shadow: 0 0 5px #ccff00, 0 0 10px #00ffcc;
+  transform: scale(1.05);
 }
 
 button:hover {
