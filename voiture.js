@@ -18,6 +18,6 @@ export class Voiture extends Vehicule {
 
   afficherDetail() {
     super.afficherInfos(); // marque / modèle / année
-    console.log(Couleur : ${this.#couleur});
+    console.log(`Couleur : ${this.#couleur}`);
   }
 }
