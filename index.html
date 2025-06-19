@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Créateur d'Objets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Ajouter un Animal</h1>
+    <form id="form-animal">
+      <label>
+        Nom :
+        <input type="text" id="nom-animal" required>
+      </label>
+      <label>
+        Type :
+        <select id="type-animal">
+          <option value="chien">Chien</option>
+          <option value="chat">Chat</option>
+          <option value="animal">Animal générique</option>
+        </select>
+      </label>
+      <button type="submit">Ajouter un animal</button>
+    </form>
+
+    <h2>Animaux créés :</h2>
+    <div id="liste-animaux"></div>
+
+    <hr>
+
+    <h1>Ajouter une Voiture</h1>
+    <form id="form-voiture">
+      <label>
+        Marque :
+        <input type="text" id="marque" required>
+      </label>
+      <label>
+        Modèle :
+        <input type="text" id="modele" required>
+      </label>
+      <label>
+        Année :
+        <input type="number" id="annee" required>
+      </label>
+      <label>
+        Couleur :
+        <input type="text" id="couleur" required>
+      </label>
+      <button type="submit">Ajouter une voiture</button>
+    </form>
+
+    <h2>Voitures créées :</h2>
+    <div id="liste-voitures"></div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

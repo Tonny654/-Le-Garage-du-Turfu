@@ -1,26 +1,53 @@
-// Importations
-import { Voiture } from "./voiture.js";
 import { Animal } from "./animal.js";
 import { Chien } from "./chien.js";
 import { Chat } from "./chat.js";
+import { Voiture } from "./voiture.js";
 
-// ==== Tests Voiture / Héritage / Encapsulation ====
-const v1 = new Voiture("Toyota", "Yaris", 2015, "rouge");
-const v2 = new Voiture("Fiat", "500", 2020, "rose");
-const v3 = new Voiture("Volvo", "XC40", 2022, "jaune");
+// ===== Formulaire ANIMAL =====
+const formAnimal = document.getElementById("form-animal");
+const listeAnimaux = document.getElementById("liste-animaux");
 
-console.log(`Couleur initiale : ${v3.couleur}`);
-v3.couleur = "vert kaki"; // setter
-console.log(`Nouvelle couleur : ${v3.couleur}\n`);
+formAnimal.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const nom = document.getElementById("nom-animal").value.trim();
+  const type = document.getElementById("type-animal").value;
 
-v1.afficherDetail();
-v2.afficherDetail();
-v3.afficherDetail();
+  let animal;
+  switch (type) {
+    case "chien": animal = new Chien(nom); break;
+    case "chat": animal = new Chat(nom); break;
+    default: animal = new Animal(nom);
+  }
 
-// ==== Tests Polymorphisme ====
-console.log("\n--- Animaux robots ---");
-const animaux = [new Chien(), new Chat(), new Chien(), new Animal()];
+  animal.faireDuBruit(); // Affiche dans la console
 
-for (const a of animaux) {
-  a.faireDuBruit(); // même appel, sons différents
-}
+  const div = document.createElement("div");
+  div.textContent = `🐾 ${animal.nom} (${type})`;
+  listeAnimaux.appendChild(div);
+
+  formAnimal.reset();
+});
+
+// ===== Formulaire VOITURE =====
+const formVoiture = document.getElementById("form-voiture");
+const listeVoitures = document.getElementById("liste-voitures");
+
+formVoiture.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const marque = document.getElementById("marque").value.trim();
+  const modele = document.getElementById("modele").value.trim();
+  const annee = parseInt(document.getElementById("annee").value);
+  const couleur = document.getElementById("couleur").value.trim();
+
+  const voiture = new Voiture(marque, modele, annee, couleur);
+
+  console.log("Nouvelle voiture créée :");
+  voiture.afficherDetail();
+
+  const div = document.createElement("div");
+  div.textContent = `🚗 ${voiture.marque} ${voiture.modele} (${voiture.annee}) - Couleur : ${voiture.couleur}`;
+  listeVoitures.appendChild(div);
+
+  formVoiture.reset();
+});
