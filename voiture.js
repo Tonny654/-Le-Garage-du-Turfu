@@ -14,49 +14,46 @@ class Voiture {
     afficherDetail() {
     console.log(`Marque: ${this.marque}, Modèle: ${this.modele}, Annee: ${this.annee}`);
     console.log(`Couleur: ${this.couleur}`);
-}
-}
+    }
 
-changerCouleur(nouvelleCouleur) {
-    this.couleur = nouvelleCouleur;
-    console.log(`La couleur a été changée en ${this.couleur}.`);
-  }
+    changerCouleur(nouvelleCouleur) {
+        this.couleur = nouvelleCouleur;
+        console.log(`La couleur a été changée en ${this.couleur}.`);
+    }
 
+    // --- Getters ---
+    getMarque() {
+        return this.#marque;
+    }
 
+    getModele() {
+        return this.#modele;
+    }
 
-   // --- Getters ---
-  getMarque() {
-    return this.#marque;
-  }
+    getAnnee() {
+        return this.annee;
+    }
 
-  getModele() {
-    return this.#modele;
-  }
+    getCouleur() {
+        return this.couleur;
+    }
 
-  getAnnee() {
-    return this.annee;
-  }
+    // --- Setters ---
+    setMarque(nouvelleMarque) {
+        this.#marque = nouvelleMarque;
+    }
 
-  getCouleur() {
-    return this.couleur;
-  }
+    setModele(nouveauModele) {
+        this.#modele = nouveauModele;
+    }
 
-  // --- Setters ---
-  setMarque(nouvelleMarque) {
-    this.#marque = nouvelleMarque;
-  }
+    setAnnee(nouvelleAnnee) {
+        this.annee = nouvelleAnnee;
+    }
 
-  setModele(nouveauModele) {
-    this.#modele = nouveauModele;
-  }
-
-  setAnnee(nouvelleAnnee) {
-    this.annee = nouvelleAnnee;
-  }
-
-  setCouleur(nouvelleCouleur) {
-    this.couleur = nouvelleCouleur;
-  }
+    setCouleur(nouvelleCouleur) {
+        this.couleur = nouvelleCouleur;
+    }
 }
 
 // Créer une instance de la classe Voiture//
@@ -66,6 +63,13 @@ const maVoiture2 = new Voiture("Peugeot", "308", 2020, "rouge");
 const maVoiture3 = new Voiture("Renault", "Modus", 2020, "Gris");
 
 
+// Modification via setters
+maVoiture.setMarque("Honda");
+maVoiture.setModele("Civic");
+maVoiture.setAnnee(2023);
+maVoiture.setCouleur("Rouge");
 
 
-maVoiture3.afficherDetail();
+
+
+maVoiture.afficherDetail();
